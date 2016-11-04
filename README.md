@@ -1,4 +1,4 @@
-# Debit-Card-Segmentation
+# Cards-Campaigns-Analysis
 
 For a detailed description of this segmentation project, visit the wiki page at the following location:
 
