@@ -19,9 +19,12 @@ The problem I discuss here is the automation of the flow chart above. When doing
 
 A good angle of attack is to understand how the removal of each outlier affects the mean and range of a given group. We can create dataset that contains the mean and range of the group for every exclusion of data below a certain purported outlier. The algorithm may be delineated as below:
 
-_Step 1_: Create tuple containing maximum value of Test, mean of the Test if the maximum value was excluded and respective range.
+_Step 1_: Create tuple containing maximum value of Test, mean of the Test if the maximum value was excluded and respective range. 
+
 _Step 2_: Remove maximum value of Test from Test
+
 _Step 3_: Repeat Step 1 and append tuple to the tuple created in Step 1. Repeat 1 through 3 until exhuastion of Test or a predetermined number of rows of Test.
+
 _Step 4_: Repeat Step 1 through 4 for Control.
 
 In essence, we now have one descriptive data set for Test (let's label this as Desc_Test) and another for Control(Desc_Control). 
