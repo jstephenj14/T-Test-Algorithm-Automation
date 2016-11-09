@@ -1,5 +1,9 @@
 # T-test Algorithm Automation
 
+_My name is John Stephen and I've created these pages to document my project work both at my workplace and otherwise. I am open to updating or improving any of the codes or processes I discuss here so feel free to reach out to me. Please visit [my profile page](https://github.com/jstephenj14) for other projects. Happy reading!_
+
+_Disclaimer: Client sensitive numbers and names have been altered to retain confidentiality._
+
 ## Background
 The two sample T-test is, in the roughest terms, used to detect whether the difference in means of two samples is significantly different. If the p-value that such a T-test provides is less that 0.05, we are told to reject the null hypothesis that difference in means is non-significant.
 
