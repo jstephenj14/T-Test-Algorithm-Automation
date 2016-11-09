@@ -1,4 +1,4 @@
-# T-Test Algorithm Automation
+# T-test Algorithm Automation
 
 ## Background
 The two sample T-test is, in the roughest terms, used to detect whether the difference in means of two samples is significantly different. If the p-value that such a T-test provides is less that 0.05, we are told to reject the null hyptothesis that difference in means is non-significant.
@@ -7,7 +7,7 @@ I imagine that most T-tests are set up in such a way that their null hypotheses 
 
 ![](https://s11.postimg.org/nv187sk8j/T_Test_Flow_Chart.png)
 
-During the manual iterations, adjustments are made to try and equalize the ranges of Tes and Control. Under severe constraints, the equalization of the means is given priority. Also, instead of dropping the maximum outlier to reduce the mean of one group, the minimum outlier from the other group may also be dropped to raise the other group's mean. This is rarer, so I will restrict further discussion to removal of maximum outliers.
+During the manual iterations, adjustments are made to try and equalize the ranges of Test and Control. Under severe constraints, the equalization of the means is given priority. Also, instead of dropping the maximum outlier to reduce the mean of one group, the minimum outlier from the other group may also be dropped to raise the other group's mean. This is rarer, so I will restrict further discussion to removal of maximum outliers.
 
 I have reservations with the statistical background of this process. I can't quite put it into words yet, but setting up the null to prove it right doesn't sit well with me. The right path, in my eyes, would be to set up the null hypothesis to be that the means were _dissimilar_, and then go about disproving it. 
 
@@ -27,7 +27,7 @@ _Step 3_: Repeat Step 1 and append tuple to the tuple created in Step 1. Repeat 
 
 _Step 4_: Repeat Step 1 through 4 for Control.
 
-In essence, we now have one descriptive data set for Test (let's label this as Desc_Test) and another for Control(Desc_Control). 
+In essence, we now have one descriptive data set for Test and another for Control. 
 
 The final step of the solution would be to compare which means in both descrptiive datasets are closest with the most similar ranges as well. The idea here is that if the means are closeby, the p-value of a resultant T-test would automatically exceed 0.95. This makes running repetitive T-tests redundant.
 
@@ -42,6 +42,8 @@ value and calculates ranges and means within the dataset itself. This prevents t
 
 The final implementation of the solution is available here.
 
+## Additional Conclusions
 
+It is worth reiterating here that I believe the statistical foundations for a process like this is suspect and ideas in causal inference seem more appropriate here. However, the problem statement is an intriguing one and its solution offers much for learning.
 
 
