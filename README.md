@@ -3,7 +3,9 @@
 ## Background
 The two sample T-test is, in the roughest terms, used to detect whether the difference in means of two samples is significantly different. If the p-value that such a T-test provides is less that 0.05, we are told to reject the null hypothesis that difference in means is non-significant.
 
-I imagine that most T-tests are set up in such a way that their null hypotheses are meant to be disproved. However, I have seen the two sample T-test applied in an inverted manner in order to determine the similarity between two samples. In our marketing analytics team, our client was interested in ensuring that their test and control groups for campaigns was similar with respect to certain characteristics. While the methods of causal inference would have been more apt to the problem, they chose to turn the usual two sample T-Test on its head to ascertain similarity. With iterative T-tests and outlier removal (done manually), once the p-value exceeded 0.95, the two groups were claimed to be similar. The flow-diagram below best describes the outline of this process:
+I imagine that most T-tests are set up in such a way that their null hypotheses are meant to be disproved. However, I have seen the two sample T-test applied in an inverted manner in order to determine the similarity between two samples. In our marketing analytics team, our client was interested in ensuring that their test and control groups for campaigns was similar with respect to certain characteristics. For example, if a campaign was targeted at test and control groups of checking account customers, the client wanted to make the two groups have equal mean account balance.  
+
+While the methods of causal inference would have been more apt to the problem, they chose to turn the usual two sample T-Test on its head to ascertain this kind of similarity. With iterative T-tests and outlier removal (done manually), once the p-value exceeded 0.95, the two groups were claimed to be similar. The flow-diagram below best describes the outline of this process:
 
 ![](https://s11.postimg.org/nv187sk8j/T_Test_Flow_Chart.png)
 
@@ -13,7 +15,7 @@ I have reservations with the statistical background of this process. I can't qui
 
 ## Problem Statement
 
-The problem I discuss here is the automation of the flow chart above. When doing this process manually, it is phenomenally tedious and time-consuming. The natural solution would be to implement a simple SAS macro that incorporates the flowchart above. This, however, quickly runs into time problems. SAS' PROC TTEST consumes time and groups with many outliers would take considerable amount of time to clean up. SAS code for my initial stab at this is available here.
+The problem I discuss here is the automation of the flow chart above. When doing this process manually, it is phenomenally tedious and time-consuming. The natural solution would be to implement a simple SAS macro that incorporates the flowchart above. This, however, quickly runs into time problems. SAS' PROC TTEST consumes time and groups with many outliers would take considerable amount of time to clean up. SAS code for my initial stab at this is available [here](https://github.com/jstephenj14/T-Test-Algorithm-Automation/blob/master/T%20test%20Macro%20v1.sas).
 
 ## Solution
 
@@ -39,7 +41,7 @@ The implementation of the logic above also leads into obstacles of its own. The 
 
 The most optimal solution I could come up with is to deploy a data step that takes the Test or Control data set along with the maximum value and calculates ranges and means within the dataset itself. This prevents time-consuming iteration and provides additional insights into how the entire dataset is distributed.
 
-The final implementation of the solution is available here.
+The final implementation of the solution is available [here](https://github.com/jstephenj14/T-Test-Algorithm-Automation/blob/master/T%20test%20Macro%20v3.sas).
 
 ## Additional Conclusions
 
