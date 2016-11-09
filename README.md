@@ -1,7 +1,7 @@
 # T-test Algorithm Automation
 
 ## Background
-The two sample T-test is, in the roughest terms, used to detect whether the difference in means of two samples is significantly different. If the p-value that such a T-test provides is less that 0.05, we are told to reject the null hyptothesis that difference in means is non-significant.
+The two sample T-test is, in the roughest terms, used to detect whether the difference in means of two samples is significantly different. If the p-value that such a T-test provides is less that 0.05, we are told to reject the null hypothesis that difference in means is non-significant.
 
 I imagine that most T-tests are set up in such a way that their null hypotheses are meant to be disproved. However, I have seen the two sample T-test applied in an inverted manner in order to determine the similarity between two samples. In our marketing analytics team, our client was interested in ensuring that their test and control groups for campaigns was similar with respect to certain characteristics. While the methods of causal inference would have been more apt to the problem, they chose to turn the usual two sample T-Test on its head to ascertain similarity. With iterative T-tests and outlier removal (done manually), once the p-value exceeded 0.95, the two groups were claimed to be similar. The flow-diagram below best describes the outline of this process:
 
@@ -23,27 +23,26 @@ _Step 1_: Create tuple containing maximum value of Test, mean of the Test if the
 
 _Step 2_: Remove maximum value of Test from Test
 
-_Step 3_: Repeat Step 1 and append tuple to the tuple created in Step 1. Repeat 1 through 3 until exhuastion of Test or a predetermined number of rows of Test.
+_Step 3_: Repeat Step 1 and append tuple to the tuple created in Step 1. Repeat 1 through 3 until exhaustion of Test or a predetermined number of rows of Test.
 
 _Step 4_: Repeat Step 1 through 4 for Control.
 
 In essence, we now have one descriptive data set for Test and another for Control. 
 
-The final step of the solution would be to compare which means in both descrptiive datasets are closest with the most similar ranges as well. The idea here is that if the means are closeby, the p-value of a resultant T-test would automatically exceed 0.95. This makes running repetitive T-tests redundant.
+The final step of the solution would be to compare which means in both descriptive datasets are closest with the most similar ranges as well. The idea here is that if the means are nearby each other, the p-value of a resultant T-test would automatically exceed 0.95. This makes running repetitive T-tests redundant.
 
 This comparison can be acheived by a Cartesian join between the two descriptive datasets.
 
 ## Technical Details
 
-The implementation of the logic above also leads into obstacles of its own. The use of SAS SQL for calculation of means and ranges coupled with an iterative do loop would still pose time consumption issues. Code attempting this is avalable here.
+The implementation of the logic above also leads into obstacles of its own. The use of SAS SQL for calculation of means and ranges coupled with an iterative do loop would still pose time consumption issues. Code attempting this is available here.
 
-The most optimal solution I could come up with is to deploy a data step that takes the Test or Control data set along with the maximum 
-value and calculates ranges and means within the dataset itself. This prevents time-consuming iteration and provides additional insights into how the entire dataset is distributed.
+The most optimal solution I could come up with is to deploy a data step that takes the Test or Control data set along with the maximum value and calculates ranges and means within the dataset itself. This prevents time-consuming iteration and provides additional insights into how the entire dataset is distributed.
 
 The final implementation of the solution is available here.
 
 ## Additional Conclusions
 
-It is worth reiterating here that I believe the statistical foundations for a process like this is suspect and ideas in causal inference seem more appropriate here. However, the problem statement is an intriguing one and its solution offers much for learning.
+It is worth reiterating here that I believe the statistical foundations for a process like this are suspect and ideas in causal inference seem more appropriate here. However, the problem statement is an intriguing one and its solution offers much for learning.
 
 
