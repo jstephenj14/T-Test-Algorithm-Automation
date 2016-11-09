@@ -19,7 +19,7 @@ The problem I discuss here is the automation of the flow chart above. When doing
 
 ## Solution
 
-A good angle of attack is to understand how the removal of each outlier affects the mean and range of a given group. We can create dataset that contains the mean and range of the group for every exclusion of data below a certain purported outlier. The algorithm may be delineated as below:
+A good angle of attack is to understand how the removal of each outlier affects the mean and range of a given group. We can create a dataset that contains the mean and range of the group for every exclusion of data below a certain purported outlier. The algorithm may be delineated as below:
 
 _Step 1_: Create tuple containing maximum value of Test, mean of the Test if the maximum value was excluded and respective range. 
 
