@@ -41,7 +41,7 @@ This comparison can be acheived by a Cartesian join between the two descriptive 
 
 ## Technical Details
 
-The implementation of the logic above also leads into obstacles of its own. The use of SAS SQL for calculation of means and ranges coupled with an iterative do loop would still pose time consumption issues. Code attempting this is available here.
+The implementation of the logic above also leads into obstacles of its own. The use of SAS SQL for calculation of means and ranges coupled with an iterative do loop would still pose time consumption issues. Code attempting this is available [here](https://github.com/jstephenj14/T-Test-Algorithm-Automation/blob/master/T%20test%20Macro%20v2.sas).
 
 The most optimal solution I could come up with is to deploy a data step that takes the Test or Control data set along with the maximum value and calculates ranges and means within the dataset itself. This prevents time-consuming iteration and provides additional insights into how the entire dataset is distributed.
 
