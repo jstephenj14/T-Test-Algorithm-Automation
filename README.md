@@ -7,7 +7,7 @@ I imagine that most T-tests are set up in such a way that their null hypotheses 
 
 While the methods of causal inference would have been more apt to the problem, they chose to turn the usual two sample T-Test on its head to ascertain this kind of similarity. With iterative T-tests and outlier removal (done manually), once the p-value exceeded 0.95, the two groups were claimed to be similar. The flow-diagram below best describes the outline of this process:
 
-![](https://s11.postimg.org/nv187sk8j/T_Test_Flow_Chart.png)
+<a href="https://drive.google.com/uc?export=view&id=1t-q-ZFLAx5d4M4NKQOHrs99UZfIPLzcA"><img src="https://drive.google.com/uc?export=view&id=1t-q-ZFLAx5d4M4NKQOHrs99UZfIPLzcA" style="width: 500px; max-width: 100%; height: auto" title="WOE Table" /></a>
 
 During the manual iterations, adjustments are made to try and equalize the ranges of Test and Control. Under severe constraints, the equalization of the means is given priority. Also, instead of dropping the maximum outlier to reduce the mean of one group, the minimum outlier from the other group may also be dropped to raise the other group's mean. This is rarer, so I will restrict further discussion to removal of maximum outliers.
 
